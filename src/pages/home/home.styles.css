@@ -1,0 +1,36 @@
+.container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.font_rectangles{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.front_rectangles_item{
+    background: -o-linear-gradient(45deg, #804EA7 24.98%, #4FB0C0 75.03%);
+    background: linear-gradient(45deg, #804EA7 24.98%, #4FB0C0 75.03%);
+    width: -webkit-calc(100% / 6);
+    width: calc(100% / 6);
+    height: 41vh;
+    margin: 0 5px;
+}
