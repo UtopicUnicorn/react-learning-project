@@ -1,5 +1,6 @@
 import React from 'react';
 import priceRuleService from '../services/price-rule.service';
+import '../price-rules.styles.css';
 
 function PriceRuleForm() {
   const [name, setName] = React.useState('');
