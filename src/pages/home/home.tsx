@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <div>
         <div className="container">
-          <h1>Добро пожаловать в систему CloneService!</h1>
+          <h1>Добро пожаловать в систему SomeCompany!</h1>
           <img src={process.env.PUBLIC_URL + 'site-logo.png'} className="logo" alt={'logo'} />
         </div>
 
