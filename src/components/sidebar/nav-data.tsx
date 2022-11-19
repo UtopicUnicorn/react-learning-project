@@ -8,7 +8,7 @@ import * as FiIcons from 'react-icons/fi';
 export const NavData = [
   {
     title: 'Главная',
-    path: '/',
+    path: '/home',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
@@ -28,6 +28,13 @@ export const NavData = [
     title: 'Сделки с клиентами',
     path: '/deals',
     icon: <FiIcons.FiArchive />,
+    cName: 'nav-text'
+  },
+  //temp
+  {
+    title: 'Вход в систему',
+    path: '/login',
+    icon: <FiIcons.FiBell />,
     cName: 'nav-text'
   }
 ];
