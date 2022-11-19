@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../pages/price-rules/price-rules.styles.css';
 
 const ModalWindow = ({ active, setActive, children }: any) => {
   return (
