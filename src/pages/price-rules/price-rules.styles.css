@@ -16,6 +16,7 @@
 .modal.active{
     opacity: 1;
     transform: scale(1);
+    overflow: auto;
 }
 
 .modal__content {
@@ -37,7 +38,7 @@
 }
 
 .button-add{
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     margin-top: 20px;
     color: rgb(255, 255, 255);
     background-color: black;
@@ -46,12 +47,8 @@
     border: 1px;
     height: 40px;
     width: 250px;
-    /*transition: background-size 0.5s ease 0s, -webkit-background-size 0.5s ease 0s;*/
-    /*cursor: pointer;*/
     display: flex;
-    /*-webkit-box-align: center;*/
     align-items: center;
-    /*-webkit-box-pack: center;*/
     justify-content: center;
 }
 
@@ -65,11 +62,12 @@ p{
     margin: 20px;
 }
 
-table{
-    margin-top: 20px;
-    text-align: center;
-    border: #060b26;
-
+.table{
+    margin-top: 50px;
+    height: 400px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 thead{
@@ -78,4 +76,8 @@ thead{
 
 tbody{
     border-width: 1px;
+}
+
+.input{
+    margin: 8px;
 }
