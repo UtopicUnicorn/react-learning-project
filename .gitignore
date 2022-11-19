@@ -10,6 +10,7 @@
 
 # production
 /build
+tmpURLs.ts
 
 # misc
 .DS_Store

@@ -1,0 +1,27 @@
+.deals_title{
+    text-align: center;
+}
+
+.deals_input{
+    width: 120px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.deals_button_block{
+    margin-top: 20px;
+}
+
+.deals_button{
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 70px;
+    left: 0;
+}
+
+.deals_button:hover{
+    cursor: pointer ;
+}
