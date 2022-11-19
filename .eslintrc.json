@@ -16,6 +16,9 @@
         "react"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "no-undef": "off"
     }
 }
