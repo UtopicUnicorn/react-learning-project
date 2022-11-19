@@ -1,3 +1,45 @@
 .radio-group{
-display: inline;
+    display: inline;
+}
+
+.table-block{
+    margin-top: 50px;
+    height: 400px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.span{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.add_partner_form{
+    margin-top: 50px;
+}
+
+.tst_block{
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%)
+}
+
+.title_add{
+    margin:0 auto;
+}
+
+.inline-block-center {
+    text-align: center;
+}
+.inline-block-center div {
+    display: inline-block;
+    text-align: left;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
 }

@@ -1,8 +1,13 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import PartnersService from './services/partners.service';
 import { PartnersInterface } from './interfaces/partners.interface';
 import ModalWindow from '../../components/modal-windows/modal-window';
 import PartnersForm from './forms/partners.form';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+
+import './partners.styles.css';
+import { Link } from 'react-router-dom';
 
 export default function Partners() {
   const [modal, setModal] = useState(false);
@@ -14,64 +19,47 @@ export default function Partners() {
     PartnersService.get().then((obj) => setPartners(obj.data));
   };
 
-  const headers: { label: string }[] = [
-    { label: 'ID' },
-    { label: 'Имя' },
-    { label: 'Фамилия' },
-    { label: 'Отчество' },
-    { label: 'Компания' },
-    { label: 'Телефон' },
-    { label: 'Организация' },
-    { label: 'адрес' },
-    { label: 'ИНН' },
-    { label: 'банк' },
-    { label: 'реквизиты' },
-    { label: 'БИК' },
-    { label: 'КПП' }
+  const columns: GridColDef[] = [
+    { field: 'name', headerName: 'Имя', width: 130 },
+    { field: 'surname', headerName: 'Фамилия', width: 130 },
+    { field: 'parentname', headerName: 'Отчество', width: 130 },
+    { field: 'type', headerName: 'Тип контрагента', width: 130 },
+    { field: 'company', headerName: 'Компания', width: 130 },
+    { field: 'phone', headerName: 'Номер телефона', width: 150 },
+    { field: 'mail', headerName: 'Почта', width: 130 },
+    { field: 'organization', headerName: 'Организация', width: 130 },
+    { field: 'address', headerName: 'Адрес', width: 130 },
+    { field: 'inn', headerName: 'ИНН', width: 130 },
+    { field: 'bank', headerName: 'Банк', width: 130 },
+    { field: 'paynumber', headerName: 'Номер счета', width: 130 },
+    { field: 'bik', headerName: 'БИК', width: 130 },
+    { field: 'kpp', headerName: 'КПП', width: 130 }
   ];
 
   return (
-    <div className="container">
+    <div>
+      <h1>Контрагенты</h1>
       <main>
-        <h1>Контрагенты</h1>
-        <button className="button-add" onClick={() => setModal(true)}>
-          <img src={process.env.PUBLIC_URL + 'btn-plus.svg'} className="btn_plus" alt={'logo'} />
-          <a>Добавить</a>
-        </button>
-        <table>
-          <thead>
-            <tr>
-              {headers.map((row, index) => {
-                return <td key={index}>{row.label}</td>;
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {partners.map((partner) => {
-              return (
-                <tr key={partner.id}>
-                  <td>{partner.name}</td>
-                  <td>{partner.surname}</td>
-                  <td>{partner.parentname}</td>
-                  <td>{partner.phone}</td>
-                  <td>{partner.mail}</td>
-                  <td>{partner.type}</td>
-                  <td>{partner.organization}</td>
-                  <td>{partner.address}</td>
-                  <td>{partner.inn}</td>
-                  <td>{partner.bank}</td>
-                  <td>{partner.paynumber}</td>
-                  <td>{partner.bik}</td>
-                  <td>{partner.kpp}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="title">
+          {/*<button className="button-add" onClick={() => setModal(true)}>*/}
+          <Link to={'/add-partner'}>
+            <button className="button-add" onClick={() => setModal(true)}>
+              <img
+                src={process.env.PUBLIC_URL + 'btn-plus.svg'}
+                className="btn_plus"
+                alt={'logo'}
+              />
+              Добавить
+            </button>
+          </Link>
+        </div>
+        <div className="table-block">
+          <DataGrid rows={partners} columns={columns} pageSize={5} rowsPerPageOptions={[5]} />
+        </div>
       </main>
-      <ModalWindow active={modal} setActive={setModal}>
-        <PartnersForm />
-      </ModalWindow>
+      {/*<ModalWindow active={modal} setActive={setModal}>*/}
+      {/*  <PartnersForm />*/}
+      {/*</ModalWindow>*/}
     </div>
   );
 }
