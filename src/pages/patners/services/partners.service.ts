@@ -5,7 +5,8 @@ import { partnersURL, testUser } from '../../../tmpURLs';
 
 export default {
   post(partner: PartnersInterface) {
-    return Axios.post(partnersURL + testUser, partner);
+    console.log(partnersURL + testUser);
+    return Axios.post('partners/_GOnJvmGqQ', partner);
   },
   get() {
     return Axios.get(partnersURL + testUser);
