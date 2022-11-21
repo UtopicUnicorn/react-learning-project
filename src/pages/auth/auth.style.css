@@ -14,9 +14,32 @@
     background: radial-gradient(circle, rgba(16,0,36,1) 0%, rgba(2,2,98,1) 80%);
     /*width: 100%;*/
     text-align: center;
-    height: 100vh;
+    height: 100%;
     /*top:0;*/
     /*left: 0;*/
+}
+
+@media (max-width:1200px ) and (min-width: 800px) {
+    .login_container{
+        background: rgb(16,0,36);
+        background: radial-gradient(circle, rgba(16,0,36,1) 0%, rgba(2,2,98,1) 80%);
+        /*width: 100%;*/
+        text-align: center;
+        /*top:0;*/
+        /*left: 0;*/
+    }
+}
+
+@media (max-width:1300px ){
+    .login_container{
+        background: rgb(16,0,36);
+        background: radial-gradient(circle, rgba(16,0,36,1) 0%, rgba(2,2,98,1) 80%);
+        /*width: 100%;*/
+        text-align: center;
+        height: 100vh;
+        /*top:0;*/
+        /*left: 0;*/
+    }
 }
 .login_title{
     font-family: 'Segoe UI', bold;
