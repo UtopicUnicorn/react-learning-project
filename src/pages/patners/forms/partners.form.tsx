@@ -5,6 +5,8 @@ import PhysForm from './physForm';
 import IPForm from './ipForm';
 import { useSelector } from 'react-redux';
 import LawForm from './lawForm';
+import { RootState } from '../../../reducer';
+import partnersService from '../services/partners.service';
 
 export function FormToggle(type: string) {
   switch (type) {
@@ -25,11 +27,14 @@ export function FormToggle(type: string) {
   }
 }
 
+export function clearForm() {}
+
 function PartnersForm() {
   const [type, setType] = React.useState<string>('phys');
 
+  const form = useSelector((state: RootState) => state.partners);
   const sendForm = () => {
-    const tstFormName = useSelector((state) => console.log(state));
+    partnersService.post(form).then(() => console.log('sent'));
   };
 
   return (
@@ -67,8 +72,6 @@ function PartnersForm() {
         </div>
       </form>
       {FormToggle(type)}
-      {/*<PhysTest />*/}
-      {/*<PhysForm />*/}
       <div className="btn_view">
         <button className="btn" onClick={sendForm}>
           Отправить

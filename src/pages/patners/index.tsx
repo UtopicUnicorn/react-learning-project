@@ -41,7 +41,6 @@ export default function Partners() {
       <h1>Контрагенты</h1>
       <main>
         <div className="title">
-          {/*<button className="button-add" onClick={() => setModal(true)}>*/}
           <Link to={'/add-partner'}>
             <button className="button-add" onClick={() => setModal(true)}>
               <img
@@ -57,9 +56,6 @@ export default function Partners() {
           <DataGrid rows={partners} columns={columns} pageSize={5} rowsPerPageOptions={[5]} />
         </div>
       </main>
-      {/*<ModalWindow active={modal} setActive={setModal}>*/}
-      {/*  <PartnersForm />*/}
-      {/*</ModalWindow>*/}
     </div>
   );
 }

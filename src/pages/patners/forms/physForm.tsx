@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { TextField } from '@mui/material';
+import { changeForm, partnerInitialState } from '../reducers/partners.reduser';
 
 export default function PhysForm() {
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [parentName, setParentName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
+  const dispatch = useDispatch();
 
-  const FormObj = {
-    name: 'name',
-    surname: 'surname',
-    parentName: 'parentName',
-    phone: '+79964273179',
-    email: 'parentName'
-  };
+  const formState = partnerInitialState;
 
-  const [form, setForm] = useState(FormObj);
+  const [form, setForm] = useState(formState);
 
   const formHandler = (ev: any) => {
     ev.preventDefault();
-    setForm(FormObj);
+    setForm(formState);
   };
 
   const handleInputChange = (ev: any) => {
@@ -29,81 +20,66 @@ export default function PhysForm() {
       ...form,
       [ev.target.name]: ev.target.value
     });
+
+    dispatch(changeForm({ [ev.target.name]: ev.target.value }));
   };
 
   return (
-    // <div style={{ textAlign: 'center', marginTop: 20 }}>
     <div style={{ textAlign: 'center' }}>
-      <form onSubmit={formHandler}>
-        {/*ФИО*/}
-        ФИО
-        <div>
-          <TextField
-            variant="filled"
-            id="outlined-basic"
+      <form className="partners_form" onSubmit={formHandler}>
+        <p>ФИО</p>
+        <div className="name-block">
+          <input
             style={{ margin: 10 }}
             placeholder="Фамилия"
             type="text"
             value={form.surname}
+            className="textPartner"
             name="surname"
-            // value={surname}
             onChange={handleInputChange}
-            // onChange={(e) => setSurname(e.target.value)}
           />
 
-          <TextField
-            variant="filled"
-            id="outlined-basic"
+          <input
             style={{ margin: 10 }}
+            className="textPartner"
             placeholder="Имя"
             type="text"
             name="name"
             value={form.name}
             onChange={handleInputChange}
-            // value={name}
-            // onChange={(e) => setName(e.target.value)}
           />
 
-          <TextField
-            variant="filled"
-            id="outlined-basic"
+          <input
             style={{ margin: 10 }}
             placeholder="Отчество"
+            className="textPartner"
             type="text"
-            value={form.parentName}
-            name="parentName"
+            value={form.parentname}
+            name="parentname"
             onChange={handleInputChange}
-            // value={parentName}
-            // onChange={(e) => setParentName(e.target.value)}
           />
         </div>
         {/*данные для связи*/}
         Контактный данные
-        <div>
-          <TextField
-            variant="filled"
-            id="outlined-basic"
+        <div className="contacts_block">
+          <input
             style={{ margin: 10 }}
             placeholder="Номер телефона"
+            className="textPartner"
             type="text"
             value={form.phone}
             name="phone"
             onChange={handleInputChange}
-            // value={phone}
-            // onChange={(e) => setPhone(e.target.value)}
           />
 
-          <TextField
-            variant="filled"
-            id="outlined-basic"
+          <input
+            className="textPartner"
             style={{ margin: 10 }}
             placeholder="Электронная почта"
             type="email"
             value={form.email}
             name="email"
             onChange={handleInputChange}
-            // value={email}
-            // onChange={(e) => setEmail(e.target.value)}
           />
         </div>
       </form>
