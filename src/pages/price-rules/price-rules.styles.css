@@ -38,7 +38,6 @@
 }
 
 .button-add{
-    /*margin-left: 50px;*/
     margin-top: 20px;
     color: rgb(255, 255, 255);
     background-color: black;
@@ -50,12 +49,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 }
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.button-add:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 p{
@@ -80,4 +79,69 @@ tbody{
 
 .input{
     margin: 8px;
+}
+
+
+.price_rules{
+  display: block;
+  padding: 20px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.price_rules input{
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 60%;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 30px;
+  transition: 1s;
+  text-align: center;
+}
+
+.price_rules input:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.price_rules input:focus{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.btn_rules{
+    margin-top: 28px;
+    margin-bottom: 40px;
+    width: 160px;
+    height: 35px;
+    border-radius: 30px;
+    background: #1a83ff;
+    offset: 70%;
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 #1a83ff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn_rules:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/*label{*/
+/*    padding-right: 10px;*/
+/*}*/
+.field {clear:both; text-align:right;}
+
+.test_head{
+    margin-top: 25px;
+    margin-left: 25%;
 }

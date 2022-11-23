@@ -5,7 +5,7 @@
 .table-block{
     margin-top: 50px;
     height: 400px;
-    width: 80%;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -21,7 +21,6 @@
 
 .tst_block{
     position: absolute;
-    /*top: 50%;*/
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, 0%)
@@ -51,6 +50,8 @@
 
 .textPartner{
     transition: 0.5s;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .name_block{
@@ -76,11 +77,15 @@
         box-sizing: border-box;
         padding: 10px;
         margin-bottom: 20px;
-        width: 15%;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 20%;
         height: 35px;
         border: 1px solid black;
         border-radius: 30px;
         transition: 1s;
+        text-align: center;
+
 
     }
 }
@@ -99,11 +104,14 @@
         box-sizing: border-box;
         padding: 10px;
         margin-bottom: 20px;
-        width: 25%;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 15%;
         height: 35px;
         border: 1px solid black;
         border-radius: 30px;
         transition: 1s;
+        text-align: center;
     }
 
 }
@@ -111,4 +119,64 @@
 .partners_form input:hover{
     transform: scale(1.1);
     transition: 1s;
+}
+
+.title_partners{
+    margin-top: 25px;
+    margin-left: 25%;
+}
+
+.form_container{
+    text-align: center;
+    margin-bottom: 100px;
+    height: 100vh;
+}
+
+.radio_button{
+    float: left;
+    margin: 0 5px 0 0;
+    width: 190px;
+    height: 40px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+.radio_button label,
+.radio_button input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.radio_button input[type="radio"] {
+    opacity: 0.011;
+    z-index: 100;
+}
+
+.radio_button input[type="radio"]:checked + label {
+    color: white;
+    border-radius: 30px;
+    background: rgb(3,149,231);
+    background: linear-gradient(90deg, rgba(3,149,231,1) 0%, rgba(110,0,168,1) 66%);
+    /*transition: 1s;*/
+}
+
+.radio_button label{
+    cursor: pointer;
+    z-index: 90;
+    line-height: 2.5em;
+}
+
+.radio_button input:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.textPartner:focus{
+    transform: scale(1.1);
 }

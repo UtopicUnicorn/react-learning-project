@@ -30,7 +30,6 @@ export default function PhysForm() {
         <p>ФИО</p>
         <div className="name-block">
           <input
-            style={{ margin: 10 }}
             placeholder="Фамилия"
             type="text"
             value={form.surname}
@@ -40,7 +39,6 @@ export default function PhysForm() {
           />
 
           <input
-            style={{ margin: 10 }}
             className="textPartner"
             placeholder="Имя"
             type="text"
@@ -50,7 +48,6 @@ export default function PhysForm() {
           />
 
           <input
-            style={{ margin: 10 }}
             placeholder="Отчество"
             className="textPartner"
             type="text"
@@ -63,7 +60,6 @@ export default function PhysForm() {
         Контактный данные
         <div className="contacts_block">
           <input
-            style={{ margin: 10 }}
             placeholder="Номер телефона"
             className="textPartner"
             type="text"
@@ -74,7 +70,6 @@ export default function PhysForm() {
 
           <input
             className="textPartner"
-            style={{ margin: 10 }}
             placeholder="Электронная почта"
             type="email"
             value={form.email}

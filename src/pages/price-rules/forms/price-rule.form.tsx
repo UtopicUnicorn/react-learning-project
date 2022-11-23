@@ -21,55 +21,56 @@ function PriceRuleForm() {
       max: Number(maxSum)
     };
     dispatch({ type: 'NEW_RULE', payload: obj });
-    priceRuleService.post(obj);
+    priceRuleService.post(obj).then(() => console.log('sent'));
   };
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <form>
-        <TextField
-          style={{ margin: 10 }}
-          id="outlined-basic"
-          label="Название"
-          variant="filled"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <TextField
-          style={{ margin: 10 }}
-          id="outlined-basic"
-          label="Процент"
-          variant="filled"
-          type="text"
-          value={percent}
-          onChange={(e) => setPercent(e.target.value)}
-        />
-
-        <TextField
-          style={{ margin: 10 }}
-          type="text"
-          id="outlined-basic"
-          label="Минимальная сумма"
-          variant="filled"
-          value={minSum}
-          onChange={(e) => setMinSum(e.target.value)}
-        />
-
-        <TextField
-          style={{ margin: 10 }}
-          type="text"
-          id="outlined-basic"
-          label="Максимальная сумма"
-          variant="filled"
-          value={maxSum}
-          onChange={(e) => setMaxSum(e.target.value)}
-        />
+      <form className="price_rules">
+        <div className="field">
+          <label>Название</label>
+          <input
+            style={{ margin: 10 }}
+            placeholder="Выкуп"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <label>Процент</label>
+          <input
+            style={{ margin: 10 }}
+            placeholder="10%"
+            type="text"
+            value={percent}
+            onChange={(e) => setPercent(e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <label>Мин. сумма</label>
+          <input
+            style={{ margin: 10 }}
+            type="text"
+            placeholder="500"
+            value={minSum}
+            onChange={(e) => setMinSum(e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <label>Макс. сумма</label>
+          <input
+            style={{ margin: 10 }}
+            type="text"
+            placeholder="1000"
+            value={maxSum}
+            onChange={(e) => setMaxSum(e.target.value)}
+          />
+        </div>
       </form>
 
-      <button type={'submit'} onClick={Check}>
-        Отправить текст
+      <button className="btn_rules" type={'submit'} onClick={Check}>
+        Создать правило
       </button>
     </div>
   );
