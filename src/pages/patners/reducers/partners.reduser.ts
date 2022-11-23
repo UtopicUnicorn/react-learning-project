@@ -8,6 +8,7 @@ export const partnerInitialState = {
   email: '',
   address: '',
   inn: '',
+  type: '',
   bank: '',
   bik: '',
   payNumber: '',
