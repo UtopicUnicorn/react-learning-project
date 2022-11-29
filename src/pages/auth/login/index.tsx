@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import authService from '../services/auth.service';
@@ -8,7 +8,7 @@ import '../auth.style.css';
 export default function Login() {
   const [password, setPassword] = React.useState('');
   const [login, setLogin] = React.useState('');
-
+  const navigation = useNavigate();
   const dispatch = useDispatch();
 
   const signIn = () => {
@@ -18,7 +18,10 @@ export default function Login() {
     };
 
     dispatch({ type: 'SIGN_IN', payload: obj });
-    authService.login(obj).then((data) => localStorage.setItem('key', data.data));
+    authService
+      .login(obj)
+      .then((data) => localStorage.setItem('key', data.data))
+      .then(() => navigation('/home'));
   };
 
   return (
@@ -54,7 +57,7 @@ export default function Login() {
             </div>
             <Link to={'/signup'}>Зарегистрироваться</Link>
             <div className="btn_view">
-              <button className="btn" onClick={signIn}>
+              <button type="button" className="btn" onClick={signIn}>
                 Войти
               </button>
             </div>

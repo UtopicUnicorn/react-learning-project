@@ -1,13 +1,15 @@
-import Axios from '../../../components/axios/axios-instance';
+import Axios, { getToken } from '../../../components/axios/axios-instance';
 import { NomenclatureInterface } from '../interfaces/nomenclature.interface';
 import { nomenclatureURL, testUser } from '../../../tmpURLs';
 
 export default {
   getNomenclature() {
-    return Axios.get(nomenclatureURL + testUser);
+    const user = getToken();
+    return Axios.get(nomenclatureURL + user);
   },
   createNomenclature(nomenclature: NomenclatureInterface) {
-    return Axios.post(nomenclatureURL + testUser, nomenclature, {
+    const user = getToken();
+    return Axios.post(nomenclatureURL + user, nomenclature, {
       headers: { 'Content-Type': 'application/json' }
     });
   }
