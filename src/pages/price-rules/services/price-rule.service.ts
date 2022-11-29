@@ -1,13 +1,15 @@
-import Axios from '../../../components/axios/axios-instance';
+import Axios, { getToken } from '../../../components/axios/axios-instance';
 import { PriceRuleInterface } from '../interfaces/price-rule.interface';
 import { priceRuleURL, testUser } from '../../../tmpURLs';
 
 export default {
   post(priceRule: PriceRuleInterface) {
-    return Axios.post(priceRuleURL + testUser, priceRule);
+    const user = getToken();
+    return Axios.post(priceRuleURL + user, priceRule);
   },
 
   get() {
-    return Axios.get(priceRuleURL + testUser);
+    const user = getToken();
+    return Axios.get(priceRuleURL + user);
   }
 };
