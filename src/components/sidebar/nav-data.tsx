@@ -13,6 +13,12 @@ export const NavData = [
     cName: 'nav-text'
   },
   {
+    title: 'Номенклатура',
+    path: '/nomenclature',
+    icon: <FaIcons.FaWpforms />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Ценовые правила',
     path: '/price-rules',
     icon: <IoIcons.IoIosPaper />,
