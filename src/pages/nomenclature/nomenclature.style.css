@@ -1,0 +1,247 @@
+.nomenclature_title{
+    margin-top: 25px;
+    margin-left: 20%;
+}
+
+.nomenclature_container{
+    margin-top: 50px;
+    margin-left: 20%;
+}
+.nomenclature_table{
+    margin-top: 50px;
+    height: 500px;
+    width: 80%;
+    padding-bottom: 200px;
+}
+
+.search_block{
+    display: flex;
+    justify-content: left;
+}
+
+.status_butt{
+    float: left;
+    margin: 0 5px 0 0;
+    width: 80px;
+    height: 40px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+}
+.status_butt label,
+.status_butt input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.status_butt input[type="radio"] {
+    opacity: 0.011;
+    z-index: 100;
+}
+
+.status_butt input[type="radio"]:checked + label {
+    color: white;
+    background: rgb(3,149,231);
+    background: linear-gradient(90deg, rgba(3,149,231,1) 0%, rgba(110,0,168,1) 66%);
+    /*transition: 1s;*/
+}
+
+.status_butt label{
+    text-align: center;
+    cursor: pointer;
+    z-index: 90;
+    line-height: 2.5em;
+}
+
+.status_butt input:hover{
+    cursor: pointer;
+}
+
+.status_butt:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+
+/*!*season*!*/
+
+.season_search{
+    /*margin-top: 40px;*/
+    /*margin-bottom: 40px;*/
+}
+
+.season_butt{
+    float: left;
+    margin: 0 5px 0 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+}
+.season_butt label,
+.season_butt input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.season_butt input[type="radio"] {
+    opacity: 0.011;
+    z-index: 100;
+}
+
+.season_butt input[type="radio"]:checked + label {
+    color: white;
+    border-radius: 100%;
+    background: rgb(3,149,231);
+    background: linear-gradient(90deg, rgba(3,149,231,1) 0%, rgba(110,0,168,1) 66%);
+    /*transition: 1s;*/
+}
+
+.season_butt label{
+    text-align: center;
+    cursor: pointer;
+    z-index: 90;
+    line-height: 2.8em;
+}
+
+.season_butt input:hover{
+    cursor: pointer;
+}
+
+.season_butt:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/*item select*/
+.item_select{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: left;
+}
+
+.item_butt{
+    float: left;
+    margin: 0 5px 0 0;
+    width: 80px;
+    height: 40px;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+}
+.item_butt label,
+.item_butt input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.item_butt input[type="radio"] {
+    opacity: 0.011;
+    z-index: 100;
+}
+
+.item_butt input[type="radio"]:checked + label {
+    color: white;
+    background: rgb(3,149,231);
+    background: linear-gradient(90deg, rgba(3,149,231,1) 0%, rgba(110,0,168,1) 66%);
+    /*transition: 1s;*/
+}
+
+.item_butt label{
+    text-align: center;
+    cursor: pointer;
+    z-index: 90;
+    line-height: 2.4em;
+}
+
+.item_butt input:hover{
+    cursor: pointer;
+}
+
+.item_butt:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.complete_butt{
+    /*margin: 0 20px 20px 0;*/
+    margin-right: 20px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    background: rgb(3,149,231);
+    background: linear-gradient(90deg, rgba(3,149,231,1) 0%, rgba(110,0,168,1) 66%);
+    transition: 0.5s;
+}
+
+
+.complete_butt:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+/*!*input*!*/
+
+.nomenclature_form{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nomenclature_label, .nomenclature_input{
+    display: block;
+    text-align: center;
+}
+
+.nomenclature_input{
+    width: 80px;
+    height: 30px;
+    /*margin-left: 5px;*/
+    margin-right: 5px;
+}
+
+.nomenclature_item_input{
+    width: 150px;
+    height: 30px;
+    /*margin-left: 5px;*/
+    margin-right: 5px;
+}
+
+.nomenclature_label, .nomenclature_item_input{
+    display: block;
+    text-align: center;
+}
+
+
+.nomenclature_label textarea{
+    display: block;
+    text-align: center;
+}
+
+.nomenclature_form{
+    padding-bottom: 100px;
+}
+
+.nomenclature_input_block{
+    display: flex;
+    margin-bottom: 20px
+}
+
+.nomenclature_textarea{
+    height: 300px;
+    width: 300px;
+    font-size: 19px;
+}
