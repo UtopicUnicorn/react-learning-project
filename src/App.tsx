@@ -11,6 +11,7 @@ import Deals from './pages/deals';
 import PartnersForm from './pages/patners/forms/partners.form';
 import Nomenclature from './pages/nomenclature';
 import CreateNomenclature from './pages/nomenclature/forms/create-nomenclature.form';
+import WorkWithItems from './pages/work-items';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/add-partner" element={<PartnersForm />} />
           <Route path="/nomenclature" element={<Nomenclature />} />
           <Route path="/add-nomenclature" element={<CreateNomenclature />} />
+          <Route path="/work-items" element={<WorkWithItems />} />
         </Routes>
       </Router>
     </>
