@@ -4,6 +4,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as FiIcons from 'react-icons/fi';
+import * as BsIcons from 'react-icons/bs';
 
 export const NavData = [
   {
@@ -16,6 +17,12 @@ export const NavData = [
     title: 'Номенклатура',
     path: '/nomenclature',
     icon: <FaIcons.FaWpforms />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Работа с товаром',
+    path: '/work-items',
+    icon: <BsIcons.BsFillArchiveFill />,
     cName: 'nav-text'
   },
   {
