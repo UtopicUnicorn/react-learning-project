@@ -4,13 +4,17 @@ import * as GiIcons from 'react-icons/gi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { Navigate } from 'react-router-dom';
 
 import { changeTire, nomenclatureInitialState } from '../reducers/nomenclature.reducer';
 import NomenclatureService from '../services/nomenclature.service';
 import { NomenclatureInterface } from '../interfaces/nomenclature.interface';
 import { RootState } from '../../../reducer';
+import { useAuth } from '../../../components/hooks/auth-hook';
 
 export default function CreateNomenclature() {
+  const { isAuth } = useAuth();
+
   let [condition, setCondition] = useState('new');
   let [season, setSeason] = useState('winter');
   let [item, setItem] = useState('tires');
@@ -59,7 +63,7 @@ export default function CreateNomenclature() {
     dispatch(changeTire({ status: c }));
   };
 
-  return (
+  return isAuth ? (
     <div>
       <div className="nomenclature_title">
         <h1>Создание номенклатуры</h1>
@@ -322,5 +326,7 @@ export default function CreateNomenclature() {
         </div>
       </main>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 }

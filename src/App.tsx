@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/price-rules" element={<PriceRules />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/deals" element={<Deals />} />

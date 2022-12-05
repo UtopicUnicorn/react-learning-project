@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import * as BaIcons from 'react-icons/bs';
 import * as GiIcons from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './nomenclature.style.css';
 import NomenclatureService from './services/nomenclature.service';
 import { NomenclatureInterface } from './interfaces/nomenclature.interface';
+import { useAuth } from '../../components/hooks/auth-hook';
 
 export default function Nomenclature() {
   const [nomenclature, setNomenclature] = useState<NomenclatureInterface[]>([]);
   const [condition, setCondition] = useState('new');
   const [season, setSeason] = useState('winter');
   const [item, setItem] = useState('tires');
+  const { isAuth } = useAuth();
 
   const columns: GridColDef[] = [
     { field: 'brand', headerName: 'Брэнд', width: 120 },
@@ -29,7 +31,7 @@ export default function Nomenclature() {
     NomenclatureService.getNomenclature().then((obj) => setNomenclature(obj.data));
   };
 
-  return (
+  return isAuth ? (
     <div>
       <div className="nomenclature_title">
         <h1>Каталог Номенклатуры</h1>
@@ -150,5 +152,7 @@ export default function Nomenclature() {
         </div>
       </main>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 }

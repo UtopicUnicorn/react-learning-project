@@ -1,8 +1,9 @@
 import { AnyAction } from 'redux';
 
 export const authInitialState = {
-  login: 'login',
-  password: 'password'
+  login: null,
+  password: null,
+  token: null
 };
 
 export type authState = ReturnType<typeof authReducer>;
