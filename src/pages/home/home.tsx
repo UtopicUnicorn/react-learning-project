@@ -1,9 +1,12 @@
 import React from 'react';
 
 import './home.styles.css';
+import { useAuth } from '../../components/hooks/auth-hook';
+import { Navigate } from 'react-router-dom';
 
 export default function Home() {
-  return (
+  const { isAuth } = useAuth();
+  return isAuth ? (
     <div className="home_container">
       <div>
         <h1>Добро пожаловать в систему SomeCompany!</h1>
@@ -18,5 +21,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 }

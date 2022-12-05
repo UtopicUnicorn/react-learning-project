@@ -4,11 +4,12 @@ import { PartnersInterface } from './interfaces/partners.interface';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import './partners.styles.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useAuth } from '../../components/hooks/auth-hook';
 
 export default function Partners() {
   const [partners, setPartners] = useState<PartnersInterface[]>([]);
-
+  const { isAuth } = useAuth();
   useEffect(() => getFunction, []);
 
   const getFunction = () => {
@@ -32,7 +33,7 @@ export default function Partners() {
     { field: 'kpp', headerName: 'КПП', width: 130 }
   ];
 
-  return (
+  return isAuth ? (
     <div>
       <div className="title_partners">
         <h1>Контрагенты</h1>
@@ -49,5 +50,7 @@ export default function Partners() {
         </div>
       </main>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 }
