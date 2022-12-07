@@ -8,7 +8,7 @@ import { WorkItemsInterface } from './interfaces/work-items.interface';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeItemWork, workItemInitialState } from './reducers/work-items.reducer';
 import { RootState } from '../../reducer';
-import { baseURL, itemsURL } from '../../tmpURLs';
+import { baseURL, itemsURL } from '../../apiURL';
 import { useAuth } from '../../components/hooks/auth-hook';
 
 export default function WorkWithItems() {
@@ -50,7 +50,7 @@ export default function WorkWithItems() {
     getWork();
   };
 
-  const headers = ['Фото', 'Товар', 'Магазин', 'Количество', 'Цена'];
+  const headers = ['Фото', 'Магазин', 'Количество', 'Цена'];
 
   const tableHeader = () => {
     return headers.map((data, index) => {
@@ -69,9 +69,9 @@ export default function WorkWithItems() {
               alt=""
             />
           </td>
-          <td>
-            {item.item.item.brand} {item.item.item.model}
-          </td>
+          {/*<td>*/}
+          {/*  {item.item.item.brand} {item.item.item.model}*/}
+          {/*</td>*/}
           <td>{item.store}</td>
           <td>{item.amount}</td>
           <td>{item.price}</td>
@@ -100,7 +100,7 @@ export default function WorkWithItems() {
             <div className="input_block_select_item">
               <label className="item_label">
                 {/*empty should be created Purchases component*/}
-                Товар
+                Товар (currently in work....)
                 <select className="item_input" name="item" />
               </label>
               <label className="item_label">

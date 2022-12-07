@@ -1,6 +1,6 @@
 import Axios, { getToken } from '../../../components/axios/axios-instance';
 import { NomenclatureInterface } from '../interfaces/nomenclature.interface';
-import { nomenclatureURL, testUser } from '../../../tmpURLs';
+import { nomenclatureURL } from '../../../apiURL';
 
 export default {
   getNomenclature() {

@@ -1,5 +1,5 @@
 import Axios, { getToken } from '../../../components/axios/axios-instance';
-import { itemsURL } from '../../../tmpURLs';
+import { itemsURL } from '../../../apiURL';
 
 export default {
   getWorkItems() {
@@ -12,7 +12,6 @@ export default {
     });
   },
   sendOnPlatform(formData: any) {
-    // console.log(formData);
     const user = getToken();
     return Axios.post(itemsURL + user, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }

@@ -1,6 +1,6 @@
 import Axios, { getToken } from '../../../components/axios/axios-instance';
 import { PriceRuleInterface } from '../interfaces/price-rule.interface';
-import { priceRuleURL, testUser } from '../../../tmpURLs';
+import { priceRuleURL } from '../../../apiURL';
 
 export default {
   post(priceRule: PriceRuleInterface) {

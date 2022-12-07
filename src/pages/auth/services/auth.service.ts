@@ -1,6 +1,6 @@
 import Axios from '../../../components/axios/axios-instance';
 import { UserInterface } from '../interfaces/user.interface';
-import { loginURL, registrationURL } from '../../../tmpURLs';
+import { loginURL, registrationURL } from '../../../apiURL';
 
 export default {
   login(user: UserInterface) {
