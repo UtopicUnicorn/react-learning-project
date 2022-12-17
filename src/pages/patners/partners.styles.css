@@ -6,8 +6,6 @@
     margin-top: 50px;
     height: 400px;
     width: 65%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .span{
@@ -123,7 +121,7 @@
 
 .title_partners{
     margin-top: 25px;
-    margin-left: 25%;
+    /*margin-left: 15%;*/
 }
 
 .form_container{
@@ -179,4 +177,8 @@
 
 .textPartner:focus{
     transform: scale(1.1);
+}
+
+.partners_container{
+    margin-left: 18%;
 }

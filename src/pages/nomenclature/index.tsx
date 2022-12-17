@@ -25,7 +25,7 @@ export default function Nomenclature() {
     { field: 'year', headerName: 'Год', width: 100 }
   ];
 
-  useEffect(() => getNomenclature, []);
+  useEffect(() => getNomenclature(), []);
 
   const getNomenclature = () => {
     NomenclatureService.getNomenclature().then((obj) => setNomenclature(obj.data));

@@ -19,7 +19,7 @@ export default function WorkWithItems() {
   const sendFormObj = useSelector((state: RootState) => state.workItem);
   const { isAuth } = useAuth();
 
-  useEffect(() => loadData, []);
+  useEffect(() => loadData(), []);
 
   const getWork = () => {
     WorkItemsService.getWorkItems().then((data) => setItems(data.data));
