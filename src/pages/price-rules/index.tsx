@@ -18,7 +18,7 @@ export default function PriceRules() {
 
   const { isAuth } = useAuth();
 
-  useEffect(() => getFunction, []);
+  useEffect(() => getFunction(), []);
 
   const columns: GridColDef[] = [
     { field: 'name', headerName: 'Имя', width: 130 },
@@ -29,12 +29,6 @@ export default function PriceRules() {
 
   const getFunction = () => {
     PriceRuleService.get().then((obj) => setRules(obj.data));
-    addRule();
-  };
-  const newRule = useSelector((state: priceRuleState) => state);
-
-  const addRule = () => {
-    console.log(newRule);
   };
 
   return isAuth ? (

@@ -10,7 +10,7 @@ import { useAuth } from '../../components/hooks/auth-hook';
 export default function Partners() {
   const [partners, setPartners] = useState<PartnersInterface[]>([]);
   const { isAuth } = useAuth();
-  useEffect(() => getFunction, []);
+  useEffect(() => getFunction(), []);
 
   const getFunction = () => {
     PartnersService.get().then((obj) => setPartners(obj.data));
@@ -34,7 +34,7 @@ export default function Partners() {
   ];
 
   return isAuth ? (
-    <div>
+    <div className="partners_container">
       <div className="title_partners">
         <h1>Контрагенты</h1>
         <Link to={'/add-partner'}>
