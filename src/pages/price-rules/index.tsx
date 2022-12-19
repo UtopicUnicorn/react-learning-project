@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
 
 import './price-rules.styles.css';
 import ModalWindow from '../../components/modal-windows/modal-window';
@@ -7,16 +6,11 @@ import PriceRuleForm from './forms/price-rule.form';
 import PriceRuleService from './services/price-rule.service';
 
 import { PriceRuleInterface } from './interfaces/price-rule.interface';
-import { useSelector } from 'react-redux';
-import { priceRuleState } from './price-rule.reducer';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { useAuth } from '../../components/hooks/auth-hook';
 
 export default function PriceRules() {
   const [modal, setModal] = useState(false);
   const [rules, setRules] = useState<PriceRuleInterface[]>([]);
-
-  const { isAuth } = useAuth();
 
   useEffect(() => getFunction(), []);
 
@@ -31,7 +25,7 @@ export default function PriceRules() {
     PriceRuleService.get().then((obj) => setRules(obj.data));
   };
 
-  return isAuth ? (
+  return (
     <div>
       <div className="test_head">
         <h1>Ценовые правила</h1>
@@ -51,7 +45,5 @@ export default function PriceRules() {
         <PriceRuleForm />
       </ModalWindow>
     </div>
-  ) : (
-    <Navigate to="/login" />
   );
 }

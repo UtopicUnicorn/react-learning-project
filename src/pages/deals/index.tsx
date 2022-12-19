@@ -1,12 +1,8 @@
 import React from 'react';
 import './index.css';
-import { useAuth } from '../../components/hooks/auth-hook';
-import { Navigate } from 'react-router-dom';
 
 export default function Deals() {
-  const { isAuth } = useAuth();
-
-  return isAuth ? (
+  return (
     <>
       <div>
         <div className="deals_title">
@@ -27,7 +23,5 @@ export default function Deals() {
         </div>
       </div>
     </>
-  ) : (
-    <Navigate to="/login" />
   );
 }
