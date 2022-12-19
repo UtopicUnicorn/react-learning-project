@@ -8,8 +8,6 @@ import LawForm from './lawForm';
 import { RootState } from '../../../reducer';
 import partnersService from '../services/partners.service';
 import { changeForm } from '../reducers/partners.reduser';
-import { useAuth } from '../../../components/hooks/auth-hook';
-import { Navigate } from 'react-router-dom';
 
 export function FormToggle(type: string) {
   switch (type) {
@@ -35,8 +33,6 @@ function PartnersForm() {
   const dispatch = useDispatch();
   const form = useSelector((state: RootState) => state.partners);
 
-  const { isAuth } = useAuth();
-
   const sendForm = () => {
     // console.log(form);
     partnersService.post(form).then(() => console.log('sent'));
@@ -47,7 +43,7 @@ function PartnersForm() {
     dispatch(changeForm({ type: type }));
   };
 
-  return isAuth ? (
+  return (
     <div className="form_container">
       <h1 className="title_add">Добавить нового контрагента</h1>
       <form className="add_partner_form">
@@ -95,8 +91,6 @@ function PartnersForm() {
         </button>
       </div>
     </div>
-  ) : (
-    <Navigate to="/login" />
   );
 }
 

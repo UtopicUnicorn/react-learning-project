@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
 
 import SelectItem from '../../components/reused-components/select-item';
 import './work-items.style.css';
@@ -9,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeItemWork, workItemInitialState } from './reducers/work-items.reducer';
 import { RootState } from '../../reducer';
 import { baseURL, itemsURL } from '../../tmpURLs';
-import { useAuth } from '../../components/hooks/auth-hook';
 
 export default function WorkWithItems() {
   const [items, setItems] = useState<WorkItemsInterface[]>([]);
@@ -17,7 +15,6 @@ export default function WorkWithItems() {
   const dispatch = useDispatch();
   const [form, setForm] = useState(workItemInitialState);
   const sendFormObj = useSelector((state: RootState) => state.workItem);
-  const { isAuth } = useAuth();
 
   useEffect(() => loadData(), []);
 
@@ -88,7 +85,7 @@ export default function WorkWithItems() {
       </option>
     );
   });
-  return isAuth ? (
+  return (
     <div className="test_hover">
       <div className="nomenclature_title">
         <h1>Работа с товаром</h1>
@@ -185,7 +182,5 @@ export default function WorkWithItems() {
         </div>
       </main>
     </div>
-  ) : (
-    <Navigate to="/login" />
   );
 }
