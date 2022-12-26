@@ -21,6 +21,7 @@ export default function Login() {
     authService
       .login(obj)
       .then((data) => localStorage.setItem('key', data.data))
+      .then(() => dispatch({ type: 'SAVE_TOKEN', payload: { token: localStorage.getItem('key') } }))
       .then(() => navigation('/home'));
   };
 

@@ -8,6 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeItemWork, workItemInitialState } from './reducers/work-items.reducer';
 import { RootState } from '../../reducer';
 import { baseURL, itemsURL } from '../../tmpURLs';
+import { CustomTable } from '../../components/tables/custom-table';
+import { WorkItemsRow } from './table/rows.table';
+import { workItemsHeaders } from './table/headers.table';
+import { storeSelector } from './selectors/selector.data';
 
 export default function WorkWithItems() {
   const [items, setItems] = useState<WorkItemsInterface[]>([]);
@@ -47,38 +51,7 @@ export default function WorkWithItems() {
     getWork();
   };
 
-  const headers = ['Фото', 'Товар', 'Магазин', 'Количество', 'Цена'];
-
-  const tableHeader = () => {
-    return headers.map((data, index) => {
-      return <td key={index}>{data}</td>;
-    });
-  };
-
-  const tableData = () => {
-    return items.map((item, index) => {
-      return (
-        <tr data-id={index} key={index}>
-          <td>
-            <img
-              src={baseURL + itemsURL + 'image/' + item.image}
-              className="item_work_table_image"
-              alt=""
-            />
-          </td>
-          <td>
-            {item.item.item.brand} {item.item.item.model}
-          </td>
-          <td>{item.store}</td>
-          <td>{item.amount}</td>
-          <td>{item.price}</td>
-        </tr>
-      );
-    });
-  };
-
-  const tmpStore = ['Дром', 'Авито', 'АвтоРУ'];
-  const options = tmpStore.map((text, index) => {
+  const options = storeSelector.map((text, index) => {
     return (
       <option key={index} value={text}>
         {text}
@@ -172,12 +145,7 @@ export default function WorkWithItems() {
             </div>
           </form>
           <div className="item_work_table_block">
-            <table className="item_work_table">
-              <thead>
-                <tr>{tableHeader()}</tr>
-              </thead>
-              <tbody>{tableData()}</tbody>
-            </table>
+            <CustomTable header={workItemsHeaders} template={WorkItemsRow(items)} />
           </div>
         </div>
       </main>

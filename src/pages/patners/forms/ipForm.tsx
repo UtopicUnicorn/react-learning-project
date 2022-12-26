@@ -28,8 +28,8 @@ export default function IPForm() {
     <div>
       <PhysForm />
       <form className="partners_form" onSubmit={formHandler}>
-        <p>Данные контрагента</p>
-        <div style={{ marginTop: 20 }}>
+        <h3>Данные контрагента</h3>
+        <div className="address_block">
           <input
             name="address"
             placeholder="Адрес"
@@ -46,7 +46,7 @@ export default function IPForm() {
             onChange={handleInputChange}
           />
         </div>
-        <p>Банковские данные</p>
+        <h3>Банковские данные</h3>
         <div>
           <input
             name="bank"

@@ -26,7 +26,12 @@ export const authReducer = (state = authInitialState, action: AnyAction) => {
         password: action.payload.password
       };
     }
-
+    case 'SAVE_TOKEN': {
+      return {
+        ...state,
+        token: action.payload.token
+      };
+    }
     default: {
       return state;
     }
