@@ -98,7 +98,7 @@ tbody{
   width: 60%;
   height: 35px;
   border: 1px solid black;
-  border-radius: 30px;
+  border-radius: 5px;
   transition: 1s;
   text-align: center;
 }
@@ -114,20 +114,9 @@ tbody{
 }
 
 .btn_rules{
-    margin-top: 28px;
-    margin-bottom: 40px;
-    width: 160px;
-    height: 35px;
-    border-radius: 30px;
-    background: #1a83ff;
-    offset: 70%;
-    border: none;
-    font-family: 'Montserrat';
-    font-size: 20px;
-    color: #FFFFFF;
-    box-shadow: 0 4px 8px 0 #1a83ff;
-    cursor: pointer;
-    transition: 0.5s;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
 }
 
 .btn_rules:hover{
@@ -136,9 +125,6 @@ tbody{
     transition: 0.5s;
 }
 
-/*label{*/
-/*    padding-right: 10px;*/
-/*}*/
 .field {clear:both; text-align:right;}
 
 .test_head{

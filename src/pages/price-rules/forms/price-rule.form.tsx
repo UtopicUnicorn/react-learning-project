@@ -3,7 +3,8 @@ import priceRuleService from '../services/price-rule.service';
 import '../price-rules.styles.css';
 import { TextField } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { priceRuleState } from '../price-rule.reducer';
+import { priceRuleState } from '../reducers/price-rule.reducer';
+import ModalWindow from '../../../components/modal-windows/modal-window';
 
 function PriceRuleForm() {
   const [name, setName] = React.useState('');

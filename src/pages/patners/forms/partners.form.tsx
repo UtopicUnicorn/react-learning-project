@@ -85,8 +85,8 @@ function PartnersForm() {
         </div>
       </form>
       {FormToggle(type)}
-      <div className="btn_view">
-        <button className="btn" onClick={sendForm}>
+      <div className="send_partner_button_block">
+        <button className="send_partner_button" onClick={sendForm}>
           Отправить
         </button>
       </div>

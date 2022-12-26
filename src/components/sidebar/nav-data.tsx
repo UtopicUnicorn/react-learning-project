@@ -10,44 +10,37 @@ export const NavData = [
   {
     title: 'Главная',
     path: '/home',
-    icon: <AiIcons.AiFillHome />,
+    icon: <AiIcons.AiFillHome className="icon" />,
     cName: 'nav-text'
   },
   {
     title: 'Номенклатура',
     path: '/nomenclature',
-    icon: <FaIcons.FaWpforms />,
+    icon: <FaIcons.FaWpforms className="icon" />,
     cName: 'nav-text'
   },
   {
     title: 'Работа с товаром',
     path: '/work-items',
-    icon: <BsIcons.BsFillArchiveFill />,
+    icon: <BsIcons.BsFillArchiveFill className="icon" />,
     cName: 'nav-text'
   },
   {
     title: 'Ценовые правила',
     path: '/price-rules',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <IoIcons.IoIosPaper className="icon" />,
     cName: 'nav-text'
   },
   {
     title: 'Контрагенты',
     path: '/partners',
-    icon: <FaIcons.FaPeopleCarry />,
+    icon: <FaIcons.FaPeopleCarry className="icon" />,
     cName: 'nav-text'
   },
   {
     title: 'Сделки с клиентами',
     path: '/deals',
-    icon: <FiIcons.FiArchive />,
-    cName: 'nav-text'
-  },
-  //temp
-  {
-    title: 'Вход в систему',
-    path: '/login',
-    icon: <FiIcons.FiBell />,
+    icon: <FiIcons.FiArchive className="icon" />,
     cName: 'nav-text'
   }
 ];

@@ -5,6 +5,9 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import './partners.styles.css';
 import { Link } from 'react-router-dom';
+import { CustomTable } from '../../components/tables/custom-table';
+import { partnersHeader } from './table/header.table';
+import { PartnersRows } from './table/rows.table';
 
 export default function Partners() {
   const [partners, setPartners] = useState<PartnersInterface[]>([]);
@@ -13,23 +16,6 @@ export default function Partners() {
   const getFunction = () => {
     PartnersService.get().then((obj) => setPartners(obj.data));
   };
-
-  const columns: GridColDef[] = [
-    { field: 'name', headerName: 'Имя', width: 130 },
-    { field: 'surname', headerName: 'Фамилия', width: 130 },
-    { field: 'parentname', headerName: 'Отчество', width: 130 },
-    { field: 'type', headerName: 'Тип контрагента', width: 130 },
-    { field: 'company', headerName: 'Компания', width: 130 },
-    { field: 'phone', headerName: 'Номер телефона', width: 150 },
-    { field: 'mail', headerName: 'Почта', width: 130 },
-    { field: 'organization', headerName: 'Организация', width: 130 },
-    { field: 'address', headerName: 'Адрес', width: 130 },
-    { field: 'inn', headerName: 'ИНН', width: 130 },
-    { field: 'bank', headerName: 'Банк', width: 130 },
-    { field: 'paynumber', headerName: 'Номер счета', width: 130 },
-    { field: 'bik', headerName: 'БИК', width: 130 },
-    { field: 'kpp', headerName: 'КПП', width: 130 }
-  ];
 
   return (
     <div className="partners_container">
@@ -44,7 +30,7 @@ export default function Partners() {
       </div>
       <main>
         <div className="table-block">
-          <DataGrid rows={partners} columns={columns} pageSize={5} rowsPerPageOptions={[5]} />
+          <CustomTable header={partnersHeader} template={PartnersRows(partners)} />
         </div>
       </main>
     </div>

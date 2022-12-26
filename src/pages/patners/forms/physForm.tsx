@@ -25,9 +25,9 @@ export default function PhysForm() {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div>
       <form className="partners_form" onSubmit={formHandler}>
-        <p>ФИО</p>
+        <h3>ФИО</h3>
         <div className="name-block">
           <input
             placeholder="Фамилия"
@@ -57,7 +57,7 @@ export default function PhysForm() {
           />
         </div>
         {/*данные для связи*/}
-        Контактный данные
+        <h3>Контактный данные</h3>
         <div className="contacts_block">
           <input
             placeholder="Номер телефона"

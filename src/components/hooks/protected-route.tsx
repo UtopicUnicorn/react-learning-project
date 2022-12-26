@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router-dom';
+import { useAuth } from './auth-hook';
 
 const Protected = ({ children }: any) => {
-  if (!localStorage.getItem('key')) {
+  const token = localStorage.getItem('key');
+  if (!token) {
     return <Navigate to="/login" replace />;
   }
   return children;

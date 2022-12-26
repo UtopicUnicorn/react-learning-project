@@ -9,12 +9,12 @@ export default function Home() {
         <h1>Добро пожаловать в систему SomeCompany!</h1>
         <img src={process.env.PUBLIC_URL + 'site-logo.png'} className="logo" alt={'logo'} />
         <div className="font_rectangles">
-          <div className="front_rectangles_item" />
-          <div className="front_rectangles_item" />
-          <div className="front_rectangles_item" />
-          <div className="front_rectangles_item" />
-          <div className="front_rectangles_item" />
-          <div className="front_rectangles_item" />
+          <div className="font_rectangles_item_1" />
+          <div className="font_rectangles_item_2" />
+          <div className="font_rectangles_item_3" />
+          <div className="font_rectangles_item_4" />
+          <div className="font_rectangles_item_5" />
+          <div className="font_rectangles_item_6" />
         </div>
       </div>
     </div>

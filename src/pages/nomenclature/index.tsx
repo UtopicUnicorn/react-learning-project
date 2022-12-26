@@ -6,22 +6,15 @@ import { Link } from 'react-router-dom';
 import './nomenclature.style.css';
 import NomenclatureService from './services/nomenclature.service';
 import { NomenclatureInterface } from './interfaces/nomenclature.interface';
+import { CustomTable } from '../../components/tables/custom-table';
+import { tiresHeader } from './table/headers.table';
+import { TiresRows } from './table/rows/tires.rows.table';
 
 export default function Nomenclature() {
   const [nomenclature, setNomenclature] = useState<NomenclatureInterface[]>([]);
   const [condition, setCondition] = useState('new');
   const [season, setSeason] = useState('winter');
   const [item, setItem] = useState('tires');
-
-  const columns: GridColDef[] = [
-    { field: 'brand', headerName: 'Брэнд', width: 120 },
-    { field: 'model', headerName: 'Модель', width: 220 },
-    { field: 'width', headerName: 'Ширина', width: 120 },
-    { field: 'profile', headerName: 'Профиль', width: 120 },
-    { field: 'diameter', headerName: 'Диаметер', width: 120 },
-    { field: 'index', headerName: 'Индекс', width: 120 },
-    { field: 'year', headerName: 'Год', width: 100 }
-  ];
 
   useEffect(() => getNomenclature(), []);
 
@@ -146,7 +139,7 @@ export default function Nomenclature() {
           </div>
         </div>
         <div className="nomenclature_table">
-          <DataGrid rows={nomenclature} columns={columns} pageSize={5} rowsPerPageOptions={[5]} />
+          <CustomTable header={tiresHeader} template={TiresRows(nomenclature)} />
         </div>
       </main>
     </div>
