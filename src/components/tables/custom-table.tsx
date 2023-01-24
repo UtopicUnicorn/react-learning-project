@@ -1,8 +1,6 @@
 import React from 'react';
-import { baseURL, itemsURL } from '../../tmpURLs';
 
 export function CustomTable(props: any) {
-  console.log(props);
   const headers = props.header;
 
   const tableHeader = () => {
