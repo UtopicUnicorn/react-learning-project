@@ -20,6 +20,12 @@ export const NavData = [
     cName: 'nav-text'
   },
   {
+    title: 'Закупка товара',
+    path: '/purchases',
+    icon: <FaIcons.FaWpforms className="icon" />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Работа с товаром',
     path: '/work-items',
     icon: <BsIcons.BsFillArchiveFill className="icon" />,
