@@ -15,6 +15,8 @@ import WorkWithItems from './pages/work-items';
 import Protected from './components/hooks/protected-route';
 import { useDispatch } from 'react-redux';
 import { useAuth } from './components/hooks/auth-hook';
+import Purchases from './pages/purchases';
+import CreatePurchase from './pages/purchases/create-purchases/create-purchase';
 
 function App() {
   const dispatch = useDispatch();
@@ -99,6 +101,22 @@ function App() {
             element={
               <Protected>
                 <WorkWithItems />
+              </Protected>
+            }
+          />
+          <Route
+            path="/purchases"
+            element={
+              <Protected>
+                <Purchases />
+              </Protected>
+            }
+          />
+          <Route
+            path="/add-purchase"
+            element={
+              <Protected>
+                <CreatePurchase />
               </Protected>
             }
           />
