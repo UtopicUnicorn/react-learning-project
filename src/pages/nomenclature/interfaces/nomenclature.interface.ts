@@ -1,4 +1,5 @@
 export interface NomenclatureInterface {
+  readonly id?: string;
   readonly brand?: string;
   readonly model?: string;
   readonly width?: number;

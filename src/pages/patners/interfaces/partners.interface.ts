@@ -1,3 +1,5 @@
+import { PriceRuleInterface } from '../../price-rules/interfaces/price-rule.interface';
+
 export interface PartnersInterface {
   id?: string;
   surname: string;
@@ -12,6 +14,6 @@ export interface PartnersInterface {
   bank?: string;
   paynumber?: string;
   bik?: string;
-  pricerule?: string;
+  pricerule?: PriceRuleInterface;
   kpp?: string;
 }

@@ -7,14 +7,16 @@ import { WorkItemsInterface } from './interfaces/work-items.interface';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeItemWork, workItemInitialState } from './reducers/work-items.reducer';
 import { RootState } from '../../reducer';
-import { baseURL, itemsURL } from '../../tmpURLs';
 import { CustomTable } from '../../components/tables/custom-table';
 import { WorkItemsRow } from './table/rows.table';
 import { workItemsHeaders } from './table/headers.table';
 import { storeSelector } from './selectors/selector.data';
+import PurchasesService from '../purchases/services/purchases.service';
+import { PurchaseInterface } from '../purchases/interfaces/purchase.interface';
 
 export default function WorkWithItems() {
   const [items, setItems] = useState<WorkItemsInterface[]>([]);
+  const [purchases, setPurchases] = useState<PurchaseInterface[]>([]);
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const dispatch = useDispatch();
   const [form, setForm] = useState(workItemInitialState);
@@ -24,6 +26,10 @@ export default function WorkWithItems() {
 
   const getWork = () => {
     WorkItemsService.getWorkItems().then((data) => setItems(data.data));
+  };
+
+  const getItems = () => {
+    PurchasesService.getPurchases().then((data) => setPurchases(data.data));
   };
 
   const sendForm = () => {
@@ -49,6 +55,7 @@ export default function WorkWithItems() {
 
   const loadData = () => {
     getWork();
+    getItems();
   };
 
   const options = storeSelector.map((text, index) => {
@@ -58,6 +65,16 @@ export default function WorkWithItems() {
       </option>
     );
   });
+
+  const itemOption = purchases.map((item) => {
+    if (typeof item.item == 'object')
+      return (
+        <option key={item.item.id} value={item.id}>
+          {item.item.brand} {item.item.model}
+        </option>
+      );
+  });
+
   return (
     <div className="test_hover">
       <div className="nomenclature_title">
@@ -71,7 +88,13 @@ export default function WorkWithItems() {
               <label className="item_label">
                 {/*empty should be created Purchases component*/}
                 Товар
-                <select className="item_input" name="item" />
+                <select
+                  className="item_input"
+                  name="item"
+                  value={form.item}
+                  onChange={handleInputChange}>
+                  {itemOption}
+                </select>
               </label>
               <label className="item_label">
                 Площадка

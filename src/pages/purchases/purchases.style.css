@@ -1,0 +1,85 @@
+.purchases_container{
+    margin-left: 18%;
+}
+.purchases_title{
+    margin-top: 25px;
+}
+
+.purchases_form_block{
+    margin-top: 50px;
+    display: flex;
+    justify-content: left;
+}
+
+.purchases_form_input{
+    width:250px;
+    height: 40px;
+}
+
+.purchases_form_select{
+    width: 250px;
+    height: 40px;
+}
+
+.purchases_contacts{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+
+.purchases_select_block div{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.purchases_form_inputs{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.purchases_form_inputs label input{
+    margin-right: 10px;
+}
+
+.purchases_send_button_block{
+    text-align: center;
+}
+
+.purchases_form_label input{
+    display:block;
+}
+
+.purchases_input_box{
+    position: relative;
+}
+
+.purchases_input_box label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.purchases_input_box{
+    margin-right: 10px;
+}
+
+.purchases_item{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.purchases_item label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.purchases_form_input{
+    text-align: center;
+}
