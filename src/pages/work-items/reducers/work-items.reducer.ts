@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 
 export const workItemInitialState = {
-  item: '9ExENFR1Si',
+  item: '',
   store: 'Дром',
   amount: '',
   price: ''
