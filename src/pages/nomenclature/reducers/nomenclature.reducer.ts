@@ -11,8 +11,7 @@ export const nomenclatureInitialState = {
   description: '',
   status: 'new',
   season: 'winter',
-  type: 'tire',
-  user: '_GOnJvmGqQ'
+  type: 'tire'
 };
 
 export function changeTire(payload: any) {

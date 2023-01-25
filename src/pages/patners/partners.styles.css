@@ -201,3 +201,24 @@
     transition: 0.5s;
     transform: scale(1.1);
 }
+
+.partners_select_box{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.partners_select_box label{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.partners_select{
+    text-align: center;
+    width: 250px;
+    height: 40px;
+}

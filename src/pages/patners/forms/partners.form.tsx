@@ -34,7 +34,6 @@ function PartnersForm() {
   const form = useSelector((state: RootState) => state.partners);
 
   const sendForm = () => {
-    // console.log(form);
     partnersService.post(form).then(() => console.log('sent'));
   };
 

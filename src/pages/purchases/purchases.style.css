@@ -23,7 +23,7 @@
 
 .purchases_contacts{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
 }
 
@@ -69,12 +69,11 @@
 
 .purchases_item{
     position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .purchases_item label {
     position: absolute;
-    top: -10px;
     left: 10px;
     background: #fff;
     padding: 0 5px;
@@ -82,4 +81,9 @@
 
 .purchases_form_input{
     text-align: center;
+}
+
+.purchases_select_block{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

@@ -5,14 +5,14 @@ export const partnerInitialState = {
   surname: '',
   parentname: '',
   phone: '',
-  email: '',
+  mail: '',
   address: '',
   inn: '',
-  type: '',
+  type: 'phys',
   bank: '',
   bik: '',
   payNumber: '',
-  pricerule: 'sD7z0y1wHQ',
+  pricerule: '',
   kpp: ''
 };
 
